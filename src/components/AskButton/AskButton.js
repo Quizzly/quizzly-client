@@ -35,6 +35,7 @@ export default class AskButton extends React.Component {
 
         Api.db.post('question/ask', data).then((data) => {
             // if callback is provided, call it.
+            console.log(data);
             if(typeof pr.callback === 'function') { pr.callback(data); }
         });
     }
