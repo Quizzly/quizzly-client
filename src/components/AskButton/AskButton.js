@@ -1,9 +1,9 @@
 import Api from '../../modules/Api';
 
 /**
- *  @title       :: AskButton
- *  @description :: Given a question and section, will push the question to students in the section.
+ *  AskButton
  *
+ *  @description :: Given a question and section, will push the question to students in the section.
  *  @params      :: Required: question(id=required), section(id=required)
  *               :: Optional: callback, text(default='Ask')
  */
