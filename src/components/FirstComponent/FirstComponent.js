@@ -32,8 +32,7 @@ export default class FirstComponent extends React.Component {
       <div className="firstComponentContainer" >
         <AskButton callback={st.callback}
                    question={st.question}
-                   section={st.section}
-                   text="Next Question"/>
+                   section={st.section}/>
       </div>
     )
   }

@@ -17,6 +17,7 @@ export default class AskButton extends React.Component {
     constructor(props) {
         super(props);
 
+        this.defaultText = 'Ask';
         this.state = {
         }
     }
@@ -43,7 +44,7 @@ export default class AskButton extends React.Component {
         var pr = this.props;
         return (
             <div className="askButton">
-                <button onClick={this.ask.bind(this)}>{pr.text || 'Ask'}</button>
+                <button onClick={this.ask.bind(this)}>{pr.text || this.defaultText}</button>
             </div>
         )
     }
