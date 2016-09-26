@@ -57,6 +57,9 @@ export default class FirstComponent extends React.Component {
         "id": "57c4d01d21cb2133112c0870"
       },
       section: {
+        title: "32423",
+        createdAt: "2016-08-31T23:15:31.057Z",
+        updatedAt: "2016-09-14T17:24:25.244Z",
         id: "57c76513dc958a811c5c1baf"
       },
       callback: function() {
@@ -73,6 +76,7 @@ export default class FirstComponent extends React.Component {
     var pr = this.props;
     return (
       <div className="firstComponentContainer" >
+        Section: {st.section.title}
         <Question question={st.question} />
         <Answers answers={st.question.answers} />
 
