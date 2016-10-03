@@ -1,7 +1,9 @@
 import { render } from 'react-dom'
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import App from 'components/App/App.js'
-import FirstComponent from 'components/FirstComponent/FirstComponent.js'
+import Entrance from 'components/Entrance/Entrance.js'
+import Lectures from 'components/Lectures/Lectures.js'
+require('electron-cookies');
 // import MyComponent from 'components/MyComponent/MyComponent.js'
 
 import Api from 'modules/Api.js'
@@ -49,8 +51,8 @@ function checkAdmin(nextState, replace, callback) {
 render((
   <Router history={hashHistory}>
     <Route path="/" component={App} /*onEnter={checkSession}*/>
-      <IndexRoute component={FirstComponent} />
-      <Route path="component" component={FirstComponent} />
+      <IndexRoute component={Entrance} />
+      <Route path="/lectures" component={Lectures}/>
     </Route>
   </Router>
 ), document.getElementById("app"));

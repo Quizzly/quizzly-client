@@ -171,3 +171,15 @@ $mont: 'Montserrat', sans-serif;
   word-wrap: break-word;
   margin-left: 40px;
 }
+
+@mixin normalInput {
+  background-color: $lightestGray;
+  border: none;
+  border-radius: $radius;
+  @include p;
+  padding-left: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  @include innerShadow;
+  width: 100%;
+}

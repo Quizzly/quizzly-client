@@ -1,10 +1,8 @@
-import s from 'FirstComponent/Lectures.scss'
 import AskButton from 'AskButton/AskButton';
 import Question from 'Question/Question';
 import Answers from 'Answers/Answers';
-import Entrance from 'Entrance/Entrance';
 
-export default class FirstComponent extends React.Component {
+export default class Lectures extends React.Component {
   static propTypes = {
     // dummy: React.PropTypes.object.isRequired,
   }
@@ -66,7 +64,7 @@ export default class FirstComponent extends React.Component {
       callback: function() {
         console.log('click event in parent');
       }
-    }
+    };
   }
 
   componentDidMount() {
@@ -76,9 +74,15 @@ export default class FirstComponent extends React.Component {
     var st = this.state;
     var pr = this.props;
     return (
-      <div className="firstComponentContainer" >
+        <div className="lecturesContainer">
+          Section: {st.section.title}
+          <Question question={st.question} />
+          <Answers answers={st.question.answers} />
 
-      </div>
+          <AskButton callback={st.callback}
+                     question={st.question}
+                     section={st.section} />
+        </div>
     )
   }
 }
