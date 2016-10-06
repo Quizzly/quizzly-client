@@ -1,0 +1,22 @@
+@import "~assets/scss/vars.scss";
+
+.headerContainer {
+  height: 57px;
+  background-color: $lightBlue;
+  border-bottom: $solidBorder;
+  @include flexVertical;
+  @include outerShadow;
+  position: fixed;
+  width: 100%;
+
+  .logoutButton {
+    @include p;
+    margin-left: auto;
+    margin-right: 20px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+
+    }
+  }
+}

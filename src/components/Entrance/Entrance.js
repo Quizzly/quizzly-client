@@ -50,6 +50,7 @@ export default class Entrance extends React.Component {
     })
     .then((user) => {
       console.log(user);
+      this.props.storeUser(user);
       hashHistory.push('/lectures');
     })
     .fail((err) => {

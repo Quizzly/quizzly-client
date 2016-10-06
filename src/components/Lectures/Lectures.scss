@@ -1,5 +1,10 @@
 @import "~assets/scss/vars.scss";
 
-.firstComponentContainer {
-  color: blue;
+.lecturesContainer {
+  overflow-x: auto;
+  padding: 20px;
+  white-space: nowrap;
+
+  padding-top: 77px;
+  height: calc(100vh - 100px);
 }
