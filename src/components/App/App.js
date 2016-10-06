@@ -4,6 +4,7 @@ import Header from 'Header/Header.js'
 import Api from 'modules/Api'
 import Utility from 'modules/Utility'
 import Session from 'modules/Session'
+import {hashHistory} from 'react-router'
 
 export default class App extends React.Component {
   static propTypes = {
@@ -17,7 +18,8 @@ export default class App extends React.Component {
       user: {},
       course: {},
       terms: [],
-      term: {}
+      term: {},
+      lecture: {},
     }
   }
 
@@ -97,6 +99,18 @@ export default class App extends React.Component {
     });
   }
 
+  selectLecture(lecture) {
+    // Api.db.post('lecture/full', {course: this.props.course.id})
+    // .then((lecture) => {
+    //
+    // });
+    this.setState({
+      lecture: lecture,
+    }, () => {
+      hashHistory.push('/lecture');
+    });
+  }
+
   renderHeader(props) {
     const pathname = this.props.location.pathname;
     let showHeader = false;
@@ -113,10 +127,12 @@ export default class App extends React.Component {
     props.storeUser = this.storeUser.bind(this);
     props.changeTerm = this.changeTerm.bind(this);
     props.changeCourse = this.changeCourse.bind(this);
+    props.selectLecture = this.selectLecture.bind(this);
     props.user = st.user;
     props.terms = st.terms;
     props.term = st.term;
     props.course = st.course;
+    props.lecture = st.lecture;
 
     return (
       <div className="appContainer">

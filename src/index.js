@@ -3,6 +3,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import App from 'components/App/App.js'
 import Entrance from 'components/Entrance/Entrance.js'
 import Lectures from 'components/Lectures/Lectures.js'
+import Lecture from 'components/Lecture/Lecture.js'
 require('electron-cookies');
 // import MyComponent from 'components/MyComponent/MyComponent.js'
 
@@ -54,6 +55,7 @@ render((
       <IndexRoute component={Entrance} />
       <Route path="/entrance" component={Entrance}/>
       <Route path="/lectures" component={Lectures}/>
+      <Route path="/lecture" component={Lecture}/>
     </Route>
   </Router>
 ), document.getElementById("app"));

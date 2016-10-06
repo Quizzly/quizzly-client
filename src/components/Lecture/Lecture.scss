@@ -1,0 +1,13 @@
+@import "~assets/scss/vars.scss";
+
+.lectureContainer {
+  padding-top: 100px;
+
+  .backArrow {
+    @include p;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -96,24 +96,13 @@ export default class Lectures extends React.Component {
     });
   }
 
-  selectLecture(lecture) {
-    // Api.db.post('lecture/full', {course: this.props.course.id})
-    // .then((lecture) => {
-    //
-    // });
-    this.setState({
-      lecture: lecture,
-      isLecture: true
-    });
-  }
-
   renderLectures() {
     return this.state.lectures.map((lecture, i) => {
       return (
         <LecturePanel
           key={i}
           lecture={lecture}
-          selectLecture={this.selectLecture.bind(this)}
+          selectLecture={this.props.selectLecture.bind(this)}
         />
       );
     })
