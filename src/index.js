@@ -49,12 +49,12 @@ function checkAdmin(nextState, replace, callback) {
     callback();
   }
 }
-// onEnter={checkSession}
+
 render((
   <Router history={hashHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Entrance} />
-      <Route path="/entrance" component={Entrance}/>
+    <Route path="/entrance" component={Entrance} />
+    <Route path="/" component={App} onEnter={checkSession} >
+      <IndexRoute component={Lectures} />
       <Route path="/lectures" component={Lectures} />
       <Route path="/lecture" component={Lecture} />
       <Route path="/lecture/mode" component={LectureMode} />

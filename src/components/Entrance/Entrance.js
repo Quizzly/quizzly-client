@@ -50,7 +50,7 @@ export default class Entrance extends React.Component {
     })
     .then((user) => {
       console.log(user);
-      this.props.storeUser(user);
+      // this.props.storeUser(user);
       hashHistory.push('/lectures');
     })
     .fail((err) => {
@@ -89,7 +89,6 @@ export default class Entrance extends React.Component {
 
     return inputArray;
   }
-
 
   render() {
     var st = this.state;

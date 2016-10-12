@@ -20,6 +20,8 @@ export default class App extends React.Component {
       terms: [],
       term: {},
       lecture: {},
+      section: {},
+      lectureItemIndex: 0,
     }
   }
 
@@ -132,6 +134,8 @@ export default class App extends React.Component {
     props.term = st.term;
     props.course = st.course;
     props.lecture = st.lecture;
+    props.section = st.section;
+    props.lectureItemIndex = st.lectureItemIndex;
 
     return (
       <div className="appContainer">
