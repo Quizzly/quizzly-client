@@ -107,8 +107,6 @@ export default class App extends React.Component {
     console.log("selecter", lecture);
     this.setState({
       lecture: lecture,
-    }, () => {
-      hashHistory.push('/lecture');
     });
   }
 

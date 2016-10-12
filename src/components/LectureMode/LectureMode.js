@@ -27,11 +27,10 @@ export default class LectureMode extends React.Component {
       return <span>Question: {lecture.lectureItems[0].question.text}</span>
 
     }
-
   }
 
   close() {
-    hashHistory.push("/lecture")
+    hashHistory.goBack();
   }
 
   render() {
@@ -39,7 +38,6 @@ export default class LectureMode extends React.Component {
     const {
       lecture
     } = this.props;
-    console.log("lecture", lecture);
     return (
       <div className="lectureModeContainer">
         <div className="closeButton" onClick={this.close.bind(this)}>X</div>

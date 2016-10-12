@@ -4,7 +4,7 @@ export default class Panel extends React.Component {
   static propTypes = {
     header: React.PropTypes.any.isRequired,
     body: React.PropTypes.any.isRequired,
-    footer: React.PropTypes.any.isRequired,
+    footer: React.PropTypes.any,
   }
 
   constructor(props) {

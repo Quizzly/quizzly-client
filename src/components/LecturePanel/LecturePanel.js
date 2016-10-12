@@ -1,5 +1,6 @@
 import s from 'LecturePanel/LecturePanel.scss'
 import Panel from 'elements/Panel/Panel.js'
+import {hashHistory} from 'react-router'
 
 export default class LecturePanel extends React.Component {
   static propTypes = {
@@ -17,12 +18,22 @@ export default class LecturePanel extends React.Component {
   componentDidMount() {
   }
 
+  startLecture() {
+    this.props.selectLecture(this.props.lecture);
+    hashHistory.push("/lecture/mode");
+  }
+
+  selectLecture() {
+    this.props.selectLecture(this.props.lecture);
+    hashHistory.push('/lecture');
+  }
+
   renderHeader() {
     var pr = this.props;
     return (
       <div
         className="pointer"
-        onClick={pr.selectLecture.bind(this, pr.lecture)}
+        onClick={this.selectLecture.bind(this)}
       >
         {pr.lecture.title}
       </div>
@@ -89,6 +100,17 @@ export default class LecturePanel extends React.Component {
     );
   }
 
+  renderFooter() {
+    return (
+      <div
+        className="lecturePanelFooter"
+        onClick={this.startLecture.bind(this)}
+      >
+        Start Lecture
+      </div>
+    );
+  }
+
   render() {
     var st = this.state;
     var pr = this.props;
@@ -96,7 +118,7 @@ export default class LecturePanel extends React.Component {
       <Panel
         header={this.renderHeader()}
         body={this.renderBody()}
-        //footer={pr.lecture.title}
+        footer={this.renderFooter()}
       />
     )
   }

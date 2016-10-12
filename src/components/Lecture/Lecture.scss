@@ -42,6 +42,14 @@
 
   .subTitleButton {
     @include greenButton;
+  }
+}
 
+.lecturePanelFooter {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
   }
 }

@@ -20,7 +20,7 @@ export default class Lecture extends React.Component {
   }
 
   backToLectures() {
-    hashHistory.push('/lectures');
+    hashHistory.goBack();
   }
 
   showAnswers() {
