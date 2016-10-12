@@ -26,9 +26,9 @@ export default class Header extends React.Component {
   }
 
   render() {
+    // this.logout();
     var st = this.state;
     var pr = this.props;
-    console.log(">>>>>>>>>>>pr", pr);
     if(!pr.terms.length) {
       return null;
     }

@@ -104,6 +104,7 @@ export default class App extends React.Component {
     // .then((lecture) => {
     //
     // });
+    console.log("selecter", lecture);
     this.setState({
       lecture: lecture,
     }, () => {

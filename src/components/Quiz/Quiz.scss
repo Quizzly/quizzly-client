@@ -1,0 +1,31 @@
+@import "~assets/scss/vars.scss";
+
+.quizContainer {
+  .quizPanel {
+    border-radius: $radius;
+    @include p;
+    @include outerShadow;
+    @include flexVertical;
+    align-items: stretch;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .quizWord {
+    border-right: $solidBorder;
+    padding: 15px;
+    background-color: $lightBlue;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    @include flexCenter;
+    width: 70px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .quizContent {
+    padding: 15px;
+    background-color: $lightBlue;
+    width: 100%;
+  }
+}
