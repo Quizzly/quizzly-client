@@ -112,6 +112,10 @@ export default class App extends React.Component {
     });
   }
 
+  selectSection(section) {
+    this.setState({section: section});
+  }
+
   renderHeader(props) {
     const pathname = this.props.location.pathname;
     let showHeader = false;
@@ -129,6 +133,7 @@ export default class App extends React.Component {
     props.changeTerm = this.changeTerm.bind(this);
     props.changeCourse = this.changeCourse.bind(this);
     props.selectLecture = this.selectLecture.bind(this);
+    props.selectSection = this.selectSection.bind(this);
     props.user = st.user;
     props.terms = st.terms;
     props.term = st.term;
