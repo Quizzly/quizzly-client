@@ -61,9 +61,19 @@ export default class LectureMode extends React.Component {
     const {
       lecture,
       lectureItemIndex,
-      section
+      section,
+        selectLectureItemIndex
     } = this.props;
     const lectureItem = lecture.lectureItems[lectureItemIndex];
+    const nextIndex = lectureItemIndex+1;
+    const callback = function() {
+      if(nextIndex < lecture.lectureItems.length ) {
+        selectLectureItemIndex(nextIndex)
+      } else {
+        selectLectureItemIndex(0);
+        hashHistory.push('/');
+      }
+    };
 
     var lectureItemPromise = null;
     switch (lectureItem.type) {
@@ -73,9 +83,7 @@ export default class LectureMode extends React.Component {
           section: section.id
         };
         Api.db.post('quiz/ask', askQuizData)
-        .then(() => {
-
-        })
+        .then(callback);
       break;
       case "QUESTION":
         let askQuestionData = {
@@ -83,9 +91,7 @@ export default class LectureMode extends React.Component {
           section: section.id
         };
         Api.db.post('question/ask', askQuestionData)
-        .then(() => {
-
-        })
+        .then(callback);
       break;
     }
   }

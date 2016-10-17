@@ -116,6 +116,12 @@ export default class App extends React.Component {
     this.setState({section: section});
   }
 
+  selectLectureItemIndex(index) {
+    this.setState({
+      lectureItemIndex: index
+    });
+  }
+
   renderHeader(props) {
     const pathname = this.props.location.pathname;
     let showHeader = false;
@@ -134,6 +140,7 @@ export default class App extends React.Component {
     props.changeCourse = this.changeCourse.bind(this);
     props.selectLecture = this.selectLecture.bind(this);
     props.selectSection = this.selectSection.bind(this);
+    props.selectLectureItemIndex = this.selectLectureItemIndex.bind(this);
     props.user = st.user;
     props.terms = st.terms;
     props.term = st.term;
@@ -141,6 +148,7 @@ export default class App extends React.Component {
     props.lecture = st.lecture;
     props.section = st.section;
     props.lectureItemIndex = st.lectureItemIndex;
+
 
     return (
       <div className="appContainer">
