@@ -12,7 +12,7 @@ import Api from 'modules/Api.js'
 import Session from 'modules/Session.js'
 
 function checkSession(nextState, replace, callback) {
-  console.log("sessoin");
+  console.log("session");
   Api.db.post('auth/user')
   .then((user) => {
     console.log("trying to session", user);
