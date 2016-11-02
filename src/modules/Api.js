@@ -1,5 +1,5 @@
 var Url = require('./Url.js');
-
+var prodMode = true;
 // Let ajax use cookies
 $.ajaxSetup({
   xhrFields: {
@@ -84,7 +84,7 @@ function chooseUrl(routeType){
 
 var Api = module.exports = {
   server: new Route(""),
-  db: new Route(window.location.port == '4040' ? Url.localhost : 'https://quizzly-backend-prod.herokuapp.com'),
+  db: new Route((window.location.port == '4040') && !prodMode ? Url.localhost : 'https://quizzly-backend-prod.herokuapp.com'),
   // otherDb: new Route(chooseUrl("redPay")),
-  baseUrl: window.location.port == '4040' ? Url.localhost : 'https://quizzly-backend-prod.herokuapp.com',
+  baseUrl: (window.location.port == '4040') && !prodMode ? Url.localhost : 'https://quizzly-backend-prod.herokuapp.com',
 }
