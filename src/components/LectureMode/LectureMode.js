@@ -17,12 +17,23 @@ export default class LectureMode extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({lecturePage: "CHOOSE_SECTION"});
+    // Resize the window
+    let win = Electron.remote.getCurrentWindow();
+    win.setSize(500, 240);
+    win.setAlwaysOnTop(true);
 
+    this.setState({lecturePage: "CHOOSE_SECTION"});
     Api.db.find('section', {course: this.props.course.id})
     .then((sections) => {
       this.setState({sections: sections});
     })
+  }
+
+  componentWillUnmount() {
+    // Resize the window
+    let win = Electron.remote.getCurrentWindow();
+    win.setSize(800, 600);
+    win.setAlwaysOnTop(false);
   }
 
   updateLecturePage(lecturePage) {
@@ -66,7 +77,9 @@ export default class LectureMode extends React.Component {
     } = this.props;
     const lectureItem = lecture.lectureItems[lectureItemIndex];
     const nextIndex = lectureItemIndex+1;
-    const callback = function() {
+    const callback = function(err, res) {
+
+
       if(nextIndex < lecture.lectureItems.length ) {
         selectLectureItemIndex(nextIndex)
       } else {
