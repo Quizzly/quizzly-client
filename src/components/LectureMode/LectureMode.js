@@ -32,6 +32,7 @@ export default class LectureMode extends React.Component {
   componentWillUnmount() {
     // Resize the window
     let win = Electron.remote.getCurrentWindow();
+    win.center();
     win.setSize(800, 600);
     win.setAlwaysOnTop(false);
   }
