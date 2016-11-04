@@ -75,6 +75,15 @@
     text-align: center;
   }
 
+  #timer {
+    margin-left: 5px;
+    padding: 20px;
+    @include roboto;
+    font-weight: 100;
+    font-size: 48px;
+    color: $white;
+  }
+
   .sectionRow {
     padding: 20px;
     @include p;
