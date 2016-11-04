@@ -107,12 +107,24 @@ export default class App extends React.Component {
     //
     // });
     console.log("selecter", lecture);
+    if(lecture.id !== this.state.lecture.id) {
+        this.setState({
+          lectureItemIndex: 0
+        });
+    }
+
     this.setState({
       lecture: lecture,
     });
   }
 
   selectSection(section) {
+    if(section.id !== this.state.section.id) {
+      this.setState({
+        lectureItemIndex: 0
+      });
+    }
+
     this.setState({section: section});
   }
 

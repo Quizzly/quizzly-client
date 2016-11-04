@@ -20,6 +20,11 @@ export default class LectureMode extends React.Component {
   }
 
   componentDidMount() {
+    // Resize the window
+    let win = Electron.remote.getCurrentWindow();
+    win.setSize(500, 240);
+    win.setAlwaysOnTop(true);
+
     this.setState({lecturePage: "CHOOSE_SECTION"});
     Api.db.find('section', {course: this.props.course.id})
     .then((sections) => {
@@ -29,6 +34,11 @@ export default class LectureMode extends React.Component {
 
   componentWillUnmount() {
     this.clearCounter();
+    // Resize the window
+    let win = Electron.remote.getCurrentWindow();
+    win.center();
+    win.setSize(800, 600);
+    win.setAlwaysOnTop(false);
   }
 
   updateLecturePage(lecturePage) {
@@ -121,11 +131,7 @@ export default class LectureMode extends React.Component {
       Api.db.post('quiz/getOpenQuiz', {
         quizKey: quiz.quizKey
       }).then(function(quiz){
-        var count = 0;
-        for(var i = 0; i < quiz.quiz.questions.length; i++){
-          count += quiz.quiz.questions[i].duration;
-        }
-        me.startTimer(Math.floor(count));
+        me.startTimer(Math.floor(quiz.timeRemaining));
       });
     });
   }
