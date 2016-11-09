@@ -1,0 +1,61 @@
+@import "~assets/scss/vars.scss";
+
+.questionContainer {
+  // border: $solidBorder;
+
+  .questionPanel {
+    border-radius: $radius;
+    @include p;
+    @include outerShadow;
+    @include flexVertical;
+    align-items: stretch;
+  }
+
+  .questionWord {
+    border-right: $solidBorder;
+    padding: 15px;
+    background-color: $lightBlue;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    @include flexVertical;
+  }
+
+  .questionContent {
+    padding: 15px;
+  }
+
+  .answersContainer {
+    border-radius: $radius;
+    @include p;
+    @include outerShadow;
+    margin-left: 52px;
+    margin-top: 10px;
+    overflow: hidden;
+
+  }
+
+  .answersPanel {
+    @include flexVertical;
+    align-items: stretch;
+    &:not(:last-child) {
+      border-bottom: $solidBorder;
+    }
+  }
+
+  .answerWord {
+    border-right: $solidBorder;
+    padding: 15px;
+    background-color: $lightBlue;
+    // border-top-left-radius: $radius;
+    // border-bottom-left-radius: $radius;
+    @include flexVertical;
+    overflow: hidden;
+    width: 20px;
+    text-align: center;
+  }
+
+  .answerContent {
+    padding: 15px;
+    width: 100%;
+  }
+}

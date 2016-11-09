@@ -10,7 +10,7 @@ var session = require('express-session');
 // var cookieParser = require('cookie-parser'); // the session is stored in a cookie, so we use this to parse it
 
 var isDeveloping = process.env.NODE_ENV !== 'production';
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4040;
 var app = express();
 
 // app.use(cookieParser());

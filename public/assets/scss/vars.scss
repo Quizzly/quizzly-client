@@ -171,3 +171,38 @@ $mont: 'Montserrat', sans-serif;
   word-wrap: break-word;
   margin-left: 40px;
 }
+
+@mixin normalInput {
+  background-color: $lightestGray;
+  border: none;
+  border-radius: $radius;
+  @include p;
+  padding-left: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  @include innerShadow;
+  width: 100%;
+}
+
+@mixin gradientButton {
+  @include greenBlueGradient;
+  @include h3;
+  padding: 10px 20px;
+  border-radius: $radius;
+  @include outerShadow;
+  cursor: pointer;
+}
+
+@mixin greenButton {
+  @include p;
+  text-align: center;
+  cursor: pointer;
+  border-radius: $radius;
+  border: $solidBorder;
+  background-color: $lightGreen;
+  padding: 10px;
+  flex-shrink: 0;
+  &:hover {
+    background-color: darken($lightGreen, 5%) !important;
+  }
+}

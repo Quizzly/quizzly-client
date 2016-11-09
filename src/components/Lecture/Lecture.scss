@@ -1,0 +1,55 @@
+@import "~assets/scss/vars.scss";
+
+.lectureContainer {
+  padding-top: 100px;
+
+  .backArrow {
+    @include p;
+    cursor: pointer;
+    margin-right: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .lectureTitle {
+    font-size: 32px;
+    @include p;
+    font-size: 36px;
+    line-height: normal;
+    text-align: center;
+    // border-bottom: $solidBorder;
+    padding: 0 15px;
+    // border-width: 2px;
+  }
+
+  .lectureItems {
+    max-width: 700px;
+    @include centerBlock;
+    padding: 20px;
+  }
+
+  .startButton {
+    @include gradientButton;
+    margin-left: 20px;
+  }
+
+  .subTitle {
+    @include flexCenter;
+    margin-top: 10px;
+
+  }
+
+  .subTitleButton {
+    @include greenButton;
+  }
+}
+
+.lecturePanelFooter {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
