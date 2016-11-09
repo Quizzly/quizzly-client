@@ -9,7 +9,8 @@ function createWindow () {
   win = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.
-  win.loadURL(`http://localhost:4000/index.html`)
+  //win.loadURL(`http://localhost:4000/index.html`)
+  win.loadURL(`https://quizzly-client-prod.herokuapp.com/`)
 
   // Open the DevTools.
   win.webContents.openDevTools()
