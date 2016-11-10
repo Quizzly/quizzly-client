@@ -1,7 +1,7 @@
 {
-  "name": "conners_framework",
+  "name": "Quizzly",
   "version": "1.0.0",
-  "description": "Conner's Framework",
+  "description": "Quizzly",
   "main": "main.js",
   "private": true,
   "dependencies": {
